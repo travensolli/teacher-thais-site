@@ -1,0 +1,666 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Teacher Thaís - Professora de Inglês em São Paulo. Aprenda inglês com leveza, confiança e resultados reais. Agende sua aula experimental grátis!"/>
+<title>Teacher Thaís | Professora de Inglês</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script>
+/* ═══════════════════════════════════════════
+   CONFIG — Edite todas as variáveis aqui
+═══════════════════════════════════════════ */
+const CONFIG = {
+  name: "Teacher Thaís",
+  firstName: "Thaís",
+  title: "Professora de Inglês",
+  tagline: "Aprenda inglês com leveza, confiança e resultados reais.",
+  city: "São Paulo – SP",
+  instagram: "@teacherthais",
+  instagramUrl: "https://instagram.com/teacherthais",
+  whatsapp: "5511999999999",
+  email: "thais@teacherthais.com",
+  bookingLink: "https://calendly.com/teacherthais",
+  youtubeUrl: "https://youtube.com/@teacherthais",
+  stats: { students: "350+", years: "8+", rating: "4.9", reviews: "200+" },
+  bioShort: "Sou Thaís, professora de inglês apaixonada por transformar a jornada de aprendizado dos meus alunos. Com mais de 8 anos de experiência, ajudo adultos e jovens a alcançarem a fluência com método próprio e personalizado.",
+  bioFull: "Formada em Letras pela USP com especialização em Teaching English as a Foreign Language (TEFL) pela Universidade de Cambridge, dedico minha carreira a desmistificar o aprendizado do inglês. Meu método combina técnicas comunicativas modernas com atenção total ao ritmo de cada aluno. Acredito que a fluência nasce da confiança — e a confiança, de um ambiente acolhedor e desafiador ao mesmo tempo. Já transformei mais de 350 vidas, de iniciantes absolutos a profissionais que precisavam do inglês para alavancar a carreira.",
+  quote: "Inglês não é dom. É método, consistência e o professor certo do seu lado.",
+  features: [
+    { icon: "fa-graduation-cap", text: "Formada em Letras (USP) + TEFL Cambridge" },
+    { icon: "fa-heart", text: "Método 100% personalizado ao seu ritmo" },
+    { icon: "fa-users", text: "+350 alunos transformados" },
+    { icon: "fa-star", text: "Avaliação média 4.9/5 estrelas" },
+    { icon: "fa-video", text: "Aulas online via Zoom/Google Meet" },
+    { icon: "fa-certificate", text: "Preparação para exames internacionais" }
+  ],
+  chips: ["Letras – USP", "TEFL Cambridge", "Inglês & Espanhol", "Método Comunicativo", "B2C / B2B"],
+  steps: [
+    { n: "01", title: "Diagnóstico Gratuito", desc: "Começamos com uma aula experimental para entender seu nível atual, seus objetivos e seus maiores desafios com o idioma." },
+    { n: "02", title: "Plano Personalizado", desc: "Com base no diagnóstico, monto um plano de estudos sob medida — frequência, materiais e metas claras e alcançáveis." },
+    { n: "03", title: "Aulas Dinâmicas", desc: "Cada aula é planejada para você. Conversação, gramática contextualizada, vocabulário real e muito conteúdo autêntico." },
+    { n: "04", title: "Fluência & Confiança", desc: "Com acompanhamento contínuo e feedback constante, você evolui com segurança até se comunicar com naturalidade e confiança." }
+  ],
+  plans: [
+    { name: "Essencial", price: "R$ 180", period: "/mês", tag: "", features: ["4 aulas por mês (50 min)", "Material didático incluso", "Grupo de suporte no WhatsApp", "Acesso à biblioteca de exercícios", "Gravação das aulas"], cta: "Começar Agora" },
+    { name: "Popular", price: "R$ 320", period: "/mês", tag: "Mais Popular", features: ["8 aulas por mês (50 min)", "Material didático incluso", "Grupo de suporte no WhatsApp", "Acesso à biblioteca de exercícios", "Gravação das aulas", "Revisão de textos e e-mails", "Feedback de pronúncia personalizado"], cta: "Quero Este Plano" },
+    { name: "Premium", price: "R$ 580", period: "/mês", tag: "", features: ["16 aulas por mês (50 min)", "Material didático incluso", "Suporte direto com a Teacher Thaís", "Acesso à biblioteca de exercícios", "Gravação das aulas", "Revisão ilimitada de textos", "Feedback de pronúncia personalizado", "Preparação para exames (TOEFL/IELTS)", "Mentoria de carreira em inglês"], cta: "Quero o Premium" }
+  ],
+  testimonials: [
+    { name: "Ana Carolina", initials: "AC", stars: 5, role: "Analista de Marketing", text: "Em 6 meses com a Teacher Thaís passei de não conseguir formar uma frase para fazer reuniões em inglês com clientes internacionais. Método incrível!" },
+    { name: "Ricardo Mendes", initials: "RM", stars: 5, role: "Engenheiro de Software", text: "Tentei vários apps e cursos antes. Com a Thaís foi diferente — ela entende minha rotina corrida e as aulas são super produtivas. Já passei no processo seletivo da empresa dos sonhos!" },
+    { name: "Juliana Ferreira", initials: "JF", stars: 5, role: "Estudante de Medicina", text: "Precisava do inglês para ler artigos científicos e a Thaís criou um plano específico pra mim. Hoje leio e escrevo com muito mais segurança." },
+    { name: "Marcos Oliveira", initials: "MO", stars: 5, role: "Empreendedor", text: "Fiz a aula experimental sem expectativas e saí completamente convencido. A didática é leve, divertida e realmente funciona. Recomendo demais!" },
+    { name: "Fernanda Costa", initials: "FC", stars: 5, role: "Designer Gráfica", text: "A Teacher Thaís tem uma paciência e um talento únicos para explicar. Minha confiança para falar inglês cresceu 100% em poucos meses!" }
+  ],
+  faq: [
+    { q: "Preciso ter alguma base de inglês para começar?", a: "Não! Atendo alunos do nível iniciante absoluto ao avançado. Na aula experimental faço um diagnóstico completo do seu nível e monto o plano ideal para você." },
+    { q: "Qual plataforma é usada nas aulas?", a: "As aulas acontecem online pelo Zoom ou Google Meet — você escolhe. Envio o link de acesso com antecedência e as aulas ficam gravadas para você revisar quando quiser." },
+    { q: "Como funciona o agendamento das aulas?", a: "Você agenda diretamente pelo Calendly (link na página) ou pelo WhatsApp. Temos horários flexíveis de segunda a sábado, incluindo manhã, tarde e noite." },
+    { q: "As aulas são individuais ou em grupo?", a: "Trabalho exclusivamente com aulas individuais para garantir atenção 100% ao seu desenvolvimento. Isso é o que torna o método tão eficaz." },
+    { q: "Emito certificado de conclusão?", a: "Sim! Ao concluir um ciclo de estudos, emito um certificado personalizado. Para certificações internacionais reconhecidas (TOEFL, IELTS, Cambridge), ofereço preparação específica." },
+    { q: "Posso cancelar ou remarcar aulas?", a: "Sim, com aviso mínimo de 24 horas você pode remarcar sem nenhuma cobrança. Valorizamos a flexibilidade para encaixar o inglês na sua rotina." },
+    { q: "Qual o valor da aula experimental?", a: "A primeira aula de diagnóstico é totalmente gratuita e sem compromisso. É a minha forma de mostrar o método na prática antes de qualquer decisão." },
+    { q: "Vocês emitem nota fiscal?", a: "Sim! Emito NFS-e (nota fiscal de serviços eletrônica) para todos os pagamentos, seja pessoa física ou jurídica." }
+  ]
+};
+</script>
+<style>
+/* ═══ DESIGN TOKENS ═══ */
+:root {
+  --color-primary: #A98BD6;
+  --color-primary-light: rgba(169,139,214,0.15);
+  --color-primary-dark: #8B6DC0;
+  --color-secondary: #6BAF88;
+  --color-secondary-light: rgba(107,175,136,0.15);
+  --color-accent: #F0B8C4;
+  --color-accent-light: rgba(240,184,196,0.2);
+  --color-bg: #FAF8FF;
+  --color-surface: #FFFFFF;
+  --color-text: #2D2040;
+  --color-text-muted: #7A6B96;
+  --color-border: #E8E0F4;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-accent: 'Nunito', sans-serif;
+  --radius-card: 20px;
+  --radius-btn: 50px;
+  --shadow-card: 0 4px 24px rgba(169,139,214,0.12);
+  --shadow-hover: 0 8px 40px rgba(169,139,214,0.25);
+  --transition: all 0.3s ease;
+  --max-width: 1200px;
+}
+/* ═══ BASE STYLES ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--color-bg);color:var(--color-text);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.2}
+/* ═══ UTILITIES ═══ */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-label{font-family:var(--font-accent);font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-primary);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-label::before{content:'';width:24px;height:2px;background:var(--color-primary);display:inline-block}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--color-text);margin-bottom:16px}
+.section-sub{font-size:1.1rem;color:var(--color-text-muted);max-width:600px;margin-bottom:48px}
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-btn);font-family:var(--font-accent);font-weight:700;font-size:0.95rem;cursor:pointer;border:none;transition:var(--transition);text-decoration:none;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));color:#fff;box-shadow:0 4px 20px rgba(169,139,214,0.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(169,139,214,0.5)}
+.btn-secondary{background:transparent;color:var(--color-primary);border:2px solid var(--color-primary)}
+.btn-secondary:hover{background:var(--color-primary-light);transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--color-primary);font-weight:700}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.15)}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.6)}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:#fff}
+/* ═══ FADE IN ANIMATION ═══ */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+/* ═══ NAV ═══ */
+#nav{position:sticky;top:0;z-index:1000;background:rgba(250,248,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border);transition:var(--transition)}
+#nav.scrolled{box-shadow:0 2px 20px rgba(169,139,214,0.15)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--color-primary)}
+.nav-logo span{color:var(--color-text)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-family:var(--font-accent);font-weight:600;font-size:0.9rem;color:var(--color-text-muted);transition:var(--transition)}
+.nav-links a:hover{color:var(--color-primary)}
+.nav-cta{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));color:#fff;padding:10px 24px;border-radius:var(--radius-btn);font-family:var(--font-accent);font-weight:700;font-size:0.85rem;transition:var(--transition)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(169,139,214,0.4);color:#fff}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--color-text);border-radius:2px;transition:var(--transition)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{display:none;position:fixed;inset:70px 0 0;background:var(--color-bg);z-index:999;padding:24px;flex-direction:column;gap:16px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-accent);font-weight:600;font-size:1.1rem;color:var(--color-text);padding:12px 0;border-bottom:1px solid var(--color-border)}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+/* ═══ HERO ═══ */
+#hero{min-height:90vh;display:flex;align-items:center;background:linear-gradient(135deg,#FAF8FF 0%,#F3EDFF 50%,#FFF0F5 100%);position:relative;overflow:hidden;padding:80px 0 40px}
+#hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(169,139,214,0.15),transparent 70%);border-radius:50%;pointer-events:none}
+#hero::after{content:'';position:absolute;bottom:-50px;left:-50px;width:300px;height:300px;background:radial-gradient(circle,rgba(240,184,196,0.2),transparent 70%);border-radius:50%;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--color-primary-light);border:1px solid var(--color-border);border-radius:var(--radius-btn);padding:8px 16px;font-family:var(--font-accent);font-size:0.8rem;font-weight:700;color:var(--color-primary);margin-bottom:24px}
+.hero-title{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;line-height:1.1;margin-bottom:20px}
+.hero-title .highlight{background:linear-gradient(135deg,var(--color-primary),var(--color-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-tagline{font-size:1.2rem;color:var(--color-text-muted);margin-bottom:36px;line-height:1.7}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-number{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--color-primary);line-height:1}
+.stat-label{font-size:0.8rem;color:var(--color-text-muted);font-family:var(--font-accent)}
+.hero-photo-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-photo{width:100%;max-width:440px;height:520px;background:linear-gradient(145deg,var(--color-primary) 0%,var(--color-primary-dark) 40%,#6B3FA0 100%);border-radius:40px 40px 120px 40px;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(169,139,214,0.3)}
+.hero-photo-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:32px;color:#fff;text-align:center;background:linear-gradient(0deg,rgba(45,32,64,0.6) 0%,transparent 60%)}
+.hero-photo-avatar{width:180px;height:180px;background:rgba(255,255,255,0.2);border-radius:50%;border:4px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:5rem;color:#fff;margin:0 auto 60px;position:relative;top:-20px;backdrop-filter:blur(10px)}
+.hero-photo-tag{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);border-radius:12px;padding:12px 20px;font-family:var(--font-accent);font-weight:700;font-size:0.95rem}
+.hero-stars{display:flex;gap:4px;justify-content:center;margin-bottom:4px}
+.hero-stars i{color:#FFD700;font-size:0.85rem}
+.hero-deco{position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:linear-gradient(135deg,var(--color-accent),var(--color-primary));border-radius:50%;opacity:0.6}
+.hero-deco2{position:absolute;bottom:60px;left:-30px;width:50px;height:50px;background:var(--color-secondary);border-radius:50%;opacity:0.5}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero-photo{max-width:280px;height:340px;margin:0 auto}.hero-btns{justify-content:center}.hero-stats{justify-content:center}}
+</style>
+<style>
+/* ═══ SOBRE MIM ═══ */
+#sobre{background:var(--color-surface)}
+.sobre-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
+.sobre-photo{position:relative}
+.sobre-photo-frame{width:100%;aspect-ratio:3/4;max-width:360px;background:linear-gradient(145deg,var(--color-accent-light),var(--color-primary-light));border-radius:30px 30px 100px 30px;border:3px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:8rem;color:var(--color-primary);position:relative;overflow:hidden}
+.sobre-photo-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,rgba(169,139,214,0.1),rgba(240,184,196,0.1))}
+.sobre-badge-float{position:absolute;bottom:-16px;right:-16px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));color:#fff;border-radius:16px;padding:16px 20px;font-family:var(--font-accent);font-weight:700;font-size:0.85rem;box-shadow:var(--shadow-card);text-align:center}
+.sobre-badge-float strong{display:block;font-size:1.4rem;font-family:var(--font-display)}
+.sobre-content h2{font-size:clamp(1.8rem,3.5vw,2.8rem)}
+.sobre-bio{color:var(--color-text-muted);margin:20px 0 28px;line-height:1.8}
+.sobre-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{background:var(--color-primary-light);color:var(--color-primary);border:1px solid var(--color-border);border-radius:var(--radius-btn);padding:6px 16px;font-family:var(--font-accent);font-size:0.8rem;font-weight:700}
+.sobre-features{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.feature-item{display:flex;align-items:center;gap:12px;font-size:0.95rem;color:var(--color-text)}
+.feature-item i{width:36px;height:36px;background:var(--color-primary-light);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--color-primary);font-size:0.85rem;flex-shrink:0}
+blockquote.teacher-quote{background:linear-gradient(135deg,var(--color-primary-light),var(--color-accent-light));border-left:4px solid var(--color-primary);border-radius:0 16px 16px 0;padding:20px 24px;font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--color-text);line-height:1.6;margin-top:24px}
+blockquote.teacher-quote cite{display:block;font-style:normal;font-size:0.85rem;font-family:var(--font-accent);color:var(--color-primary);font-weight:700;margin-top:8px}
+@media(max-width:768px){.sobre-inner{grid-template-columns:1fr}.sobre-photo-frame{max-width:260px;margin:0 auto}}
+/* ═══ MÉTODO ═══ */
+#metodo{background:linear-gradient(135deg,#F3EDFF 0%,var(--color-bg) 100%)}
+.metodo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.metodo-card{background:var(--color-surface);border-radius:var(--radius-card);padding:32px;border:1px solid var(--color-border);position:relative;overflow:hidden;transition:var(--transition)}
+.metodo-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.metodo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--color-primary),var(--color-accent))}
+.metodo-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--color-primary-light);line-height:1;margin-bottom:16px;opacity:0.6}
+.metodo-card h3{font-size:1.2rem;margin-bottom:12px;color:var(--color-text)}
+.metodo-card p{color:var(--color-text-muted);font-size:0.9rem;line-height:1.7}
+/* ═══ PLANOS ═══ */
+#planos{background:var(--color-surface)}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.plan-card{background:var(--color-bg);border:2px solid var(--color-border);border-radius:var(--radius-card);padding:36px 28px;position:relative;transition:var(--transition);display:flex;flex-direction:column}
+.plan-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.plan-card.featured{background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));border-color:var(--color-primary);color:#fff}
+.plan-card.featured .plan-price,.plan-card.featured .plan-period,.plan-card.featured .plan-feature,.plan-card.featured h3{color:#fff}
+.plan-card.featured .plan-feature::before{color:rgba(255,255,255,0.7)}
+.plan-popular-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--color-accent);color:var(--color-text);font-family:var(--font-accent);font-weight:800;font-size:0.75rem;padding:6px 20px;border-radius:var(--radius-btn);white-space:nowrap}
+.plan-card h3{font-size:1.3rem;margin-bottom:24px;font-family:var(--font-display)}
+.plan-price{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--color-primary);line-height:1}
+.plan-period{font-size:0.9rem;color:var(--color-text-muted);margin-bottom:24px}
+.plan-features{flex:1;margin-bottom:28px}
+.plan-feature{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;margin-bottom:10px;color:var(--color-text)}
+.plan-feature::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--color-secondary);flex-shrink:0;margin-top:2px}
+@media(max-width:768px){.plans-grid{grid-template-columns:1fr}}
+/* ═══ DEPOIMENTOS ═══ */
+#depoimentos{background:linear-gradient(135deg,#FFF0F5 0%,#F3EDFF 100%)}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.testi-card{background:var(--color-surface);border-radius:var(--radius-card);padding:28px;border:1px solid var(--color-border);box-shadow:var(--shadow-card);transition:var(--transition)}
+.testi-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.testi-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.testi-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-accent);font-weight:700;font-size:1rem;flex-shrink:0}
+.testi-name{font-family:var(--font-accent);font-weight:700;font-size:0.95rem;color:var(--color-text)}
+.testi-role{font-size:0.8rem;color:var(--color-text-muted)}
+.testi-stars{display:flex;gap:3px;margin-bottom:12px}
+.testi-stars i{color:#FFD700;font-size:0.85rem}
+.testi-text{font-size:0.9rem;color:var(--color-text-muted);line-height:1.7;font-style:italic}
+.testi-quote{font-family:var(--font-display);font-size:3rem;color:var(--color-primary);opacity:0.2;line-height:0.5;margin-bottom:8px}
+/* ═══ FAQ ═══ */
+#faq{background:var(--color-surface)}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--color-border);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:var(--transition)}
+.faq-item.open{border-color:var(--color-primary)}
+.faq-q{width:100%;background:none;border:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:var(--font-accent);font-weight:700;font-size:0.95rem;color:var(--color-text);text-align:left;gap:16px;transition:var(--transition)}
+.faq-q:hover{background:var(--color-primary-light)}
+.faq-q i{color:var(--color-primary);transition:var(--transition);flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease}
+.faq-a-inner{padding:0 24px 20px;color:var(--color-text-muted);font-size:0.9rem;line-height:1.7}
+.faq-item.open .faq-a{max-height:300px}
+/* ═══ CTA FINAL ═══ */
+#agendar{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-dark) 50%,#6B3FA0 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+#agendar::before{content:'';position:absolute;top:-50%;left:-10%;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%}
+#agendar::after{content:'';position:absolute;bottom:-30%;right:-5%;width:300px;height:300px;background:rgba(255,255,255,0.05);border-radius:50%}
+.cta-content{position:relative;z-index:1;max-width:700px;margin:0 auto 60px}
+.cta-content .section-label{justify-content:center;color:rgba(255,255,255,0.7)}
+.cta-content .section-label::before{background:rgba(255,255,255,0.5)}
+.cta-content h2{color:#fff;font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
+.cta-content p{color:rgba(255,255,255,0.85);font-size:1.1rem;margin-bottom:36px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.contact-form{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:24px;padding:40px;max-width:600px;margin:0 auto;position:relative;z-index:1}
+.contact-form h3{color:#fff;font-family:var(--font-display);font-size:1.5rem;margin-bottom:24px;text-align:center}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+.form-group label{color:rgba(255,255,255,0.8);font-family:var(--font-accent);font-size:0.8rem;font-weight:700}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:12px;padding:12px 16px;color:#fff;font-family:var(--font-body);font-size:0.9rem;outline:none;transition:var(--transition);width:100%}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.5)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.2)}
+.form-group select option{color:var(--color-text);background:#fff}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{margin-top:8px;width:100%;justify-content:center;font-size:1rem;padding:16px}
+/* ═══ FOOTER ═══ */
+#footer{background:var(--color-text);color:rgba(255,255,255,0.7);padding:60px 0 24px}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand .nav-logo{color:#fff;margin-bottom:16px;display:block}
+.footer-brand p{font-size:0.9rem;line-height:1.7;margin-bottom:20px}
+.footer-socials{display:flex;gap:12px}
+.social-btn{width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);transition:var(--transition);font-size:0.9rem}
+.social-btn:hover{background:var(--color-primary);color:#fff;transform:translateY(-3px)}
+.footer-col h4{color:#fff;font-family:var(--font-accent);font-weight:700;font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px}
+.footer-col a{display:block;color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:10px;transition:var(--transition)}
+.footer-col a:hover{color:var(--color-primary);padding-left:4px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;font-size:0.8rem}
+.footer-bottom a{color:rgba(255,255,255,0.5)}
+.footer-bottom a:hover{color:var(--color-primary)}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}}
+/* ═══ WHATSAPP FLOAT ═══ */
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;align-items:center;gap:10px;background:#25D366;color:#fff;border-radius:var(--radius-btn);padding:12px 20px;box-shadow:0 4px 20px rgba(37,211,102,0.4);font-family:var(--font-accent);font-weight:700;font-size:0.9rem;transition:var(--transition);text-decoration:none}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,0.5);color:#fff}
+.whatsapp-float i{font-size:1.2rem}
+@media(max-width:480px){.whatsapp-float span{display:none}.whatsapp-float{border-radius:50%;padding:16px;width:56px;height:56px;justify-content:center}}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="nav" aria-label="Navegação principal">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Teacher Thaís - Início"><span>Teacher</span> Thaís</a>
+    <div class="nav-links" role="menubar">
+      <a href="#sobre" role="menuitem">Sobre</a>
+      <a href="#metodo" role="menuitem">Método</a>
+      <a href="#planos" role="menuitem">Planos</a>
+      <a href="#depoimentos" role="menuitem">Depoimentos</a>
+      <a href="#faq" role="menuitem">FAQ</a>
+      <a href="#agendar" class="nav-cta" role="menuitem" id="nav-cta-btn">Agendar Aula</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navegação">
+  <a href="#sobre" class="mobile-link">Sobre Mim</a>
+  <a href="#metodo" class="mobile-link">Meu Método</a>
+  <a href="#planos" class="mobile-link">Planos</a>
+  <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#agendar" class="btn btn-primary mobile-link" style="margin-top:8px">Agendar Aula Grátis</a>
+</div>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="container hero-inner">
+    <div class="hero-text fade-in">
+      <div class="hero-badge"><i class="fas fa-star" aria-hidden="true"></i> <span id="hero-badge-text">Professora de Inglês em São Paulo</span></div>
+      <h1 class="hero-title" id="hero-title">
+        Olá, eu sou a<br>
+        <span class="highlight" id="hero-name">Teacher Thaís</span>
+      </h1>
+      <p class="hero-tagline" id="hero-tagline">Aprenda inglês com leveza, confiança e resultados reais.</p>
+      <div class="hero-btns">
+        <a href="#" id="hero-cta-primary" class="btn btn-primary" aria-label="Agendar aula grátis"><i class="fas fa-calendar-check" aria-hidden="true"></i> Agendar Aula Grátis</a>
+        <a href="#metodo" class="btn btn-secondary">Conheça meu método</a>
+      </div>
+      <div class="hero-stats" role="list" aria-label="Estatísticas">
+        <div class="stat" role="listitem"><span class="stat-number" id="stat-students">350+</span><span class="stat-label">Alunos formados</span></div>
+        <div class="stat" role="listitem"><span class="stat-number" id="stat-years">8+</span><span class="stat-label">Anos de experiência</span></div>
+        <div class="stat" role="listitem">
+          <span class="stat-number" style="display:flex;align-items:center;gap:4px" id="stat-rating">4.9 <i class="fas fa-star" style="font-size:1.2rem;color:#FFD700" aria-hidden="true"></i></span>
+          <span class="stat-label">Avaliação média</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap fade-in">
+      <div class="hero-deco" aria-hidden="true"></div>
+      <div class="hero-deco2" aria-hidden="true"></div>
+      <div class="hero-photo" aria-label="Foto da Teacher Thaís">
+        <div class="hero-photo-avatar" aria-hidden="true">T</div>
+        <div class="hero-photo-inner">
+          <div class="hero-stars" aria-label="5 estrelas"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <div class="hero-photo-tag">
+            <div id="hero-photo-name" style="font-size:1.1rem;margin-bottom:2px">Teacher Thaís</div>
+            <div style="font-size:0.75rem;opacity:0.8" id="hero-photo-title">Professora de Inglês</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MIM -->
+<section id="sobre" class="section" aria-labelledby="sobre-title">
+  <div class="container">
+    <div class="sobre-inner">
+      <div class="sobre-photo fade-in">
+        <div class="sobre-photo-frame" aria-label="Foto da professora Thaís">&#128218;</div>
+        <div class="sobre-badge-float"><strong id="sobre-badge-num">350+</strong> alunos<br>transformados</div>
+      </div>
+      <div class="sobre-content fade-in">
+        <p class="section-label"><i class="fas fa-user-circle" aria-hidden="true"></i> Sobre Mim</p>
+        <h2 id="sobre-title">Prazer, sou a <span style="color:var(--color-primary)" id="sobre-name">Thaís</span></h2>
+        <p class="sobre-bio" id="sobre-bio">Sou Thaís, professora de inglês apaixonada por transformar a jornada de aprendizado dos meus alunos. Com mais de 8 anos de experiência, ajudo adultos e jovens a alcançarem a fluência com método próprio e personalizado.</p>
+        <div class="sobre-chips" id="sobre-chips" aria-label="Formação e método"></div>
+        <div class="sobre-features" id="sobre-features" role="list" aria-label="Diferenciais"></div>
+        <blockquote class="teacher-quote" id="sobre-quote">
+          "Inglês não é dom. É método, consistência e o professor certo do seu lado."
+          <cite id="sobre-cite">— Teacher Thaís</cite>
+        </blockquote>
+        <a href="#agendar" class="btn btn-primary" style="margin-top:24px">Quero conhecer o método <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- MÉTODO -->
+<section id="metodo" class="section" aria-labelledby="metodo-title">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label"><i class="fas fa-route" aria-hidden="true"></i> Como Funciona</p>
+      <h2 class="section-title" id="metodo-title">Meu Método em 4 Etapas</h2>
+      <p class="section-sub">Um processo claro e personalizado para levar você do seu nível atual até a fluência com segurança.</p>
+    </div>
+    <div class="metodo-grid" id="metodo-grid" role="list" aria-label="Etapas do método"></div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" class="section" aria-labelledby="planos-title">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label" style="justify-content:center"><i class="fas fa-tags" aria-hidden="true"></i> Investimento</p>
+      <h2 class="section-title" id="planos-title">Escolha seu Plano</h2>
+      <p class="section-sub" style="margin:0 auto 48px">Planos flexíveis para encaixar no seu ritmo e nos seus objetivos. Todos incluem aula experimental grátis.</p>
+    </div>
+    <div class="plans-grid" id="plans-grid" role="list" aria-label="Planos disponíveis"></div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos" class="section" aria-labelledby="depoimentos-title">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label"><i class="fas fa-comments" aria-hidden="true"></i> Depoimentos</p>
+      <h2 class="section-title" id="depoimentos-title">O que dizem meus alunos</h2>
+      <p class="section-sub">Resultados reais de pessoas reais que transformaram seu inglês.</p>
+    </div>
+    <div class="testimonials-grid" id="testimonials-grid" role="list" aria-label="Depoimentos dos alunos"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label" style="justify-content:center"><i class="fas fa-question-circle" aria-hidden="true"></i> Dúvidas Frequentes</p>
+      <h2 class="section-title" id="faq-title">Perguntas Frequentes</h2>
+      <p class="section-sub" style="margin:0 auto 48px">Tudo o que você precisa saber antes de começar sua jornada.</p>
+    </div>
+    <div class="faq-list" id="faq-list" role="list" aria-label="Perguntas frequentes"></div>
+  </div>
+</section>
+
+<!-- AGENDAMENTO / CTA FINAL -->
+<section id="agendar" class="section" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-content fade-in">
+      <p class="section-label"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Comece Hoje</p>
+      <h2 id="cta-title">Pronto para transformar seu inglês?</h2>
+      <p>Agende sua aula experimental gratuita e dê o primeiro passo rumo à fluência. Sem compromisso, sem pressão.</p>
+      <div class="cta-btns">
+        <a href="#" id="cta-booking-btn" class="btn btn-white"><i class="fas fa-calendar-check" aria-hidden="true"></i> Agendar Aula Grátis</a>
+        <a href="#" id="cta-whatsapp-btn" class="btn btn-outline-white"><i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="contact-form fade-in" role="form" aria-label="Formulário de contato">
+      <h3>Entre em contato</h3>
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="form-name">Nome *</label>
+            <input type="text" id="form-name" name="name" placeholder="Seu nome completo" required aria-required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="form-email">E-mail *</label>
+            <input type="email" id="form-email" name="email" placeholder="seu@email.com" required aria-required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="form-phone">WhatsApp *</label>
+            <input type="tel" id="form-phone" name="phone" placeholder="(11) 99999-9999" required aria-required="true"/>
+          </div>
+          <div class="form-group">
+            <label for="form-level">Nível de inglês</label>
+            <select id="form-level" name="level" aria-label="Selecione seu nível de inglês">
+              <option value="">Selecione...</option>
+              <option value="Iniciante">Iniciante (nunca estudei)</option>
+              <option value="Básico">Básico (sei o básico)</option>
+              <option value="Intermediário">Intermediário</option>
+              <option value="Avançado">Avançado</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="form-message">Mensagem</label>
+            <textarea id="form-message" name="message" placeholder="Conte um pouco sobre seus objetivos com o inglês..."></textarea>
+          </div>
+          <div class="form-group full">
+            <button type="submit" class="btn btn-white form-submit" id="form-submit-btn">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar pelo WhatsApp
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" aria-label="Teacher Thaís - Início"><span style="color:rgba(255,255,255,0.6)">Teacher</span> Thaís</a>
+        <p id="footer-bio">Professora de Inglês apaixonada por transformar vidas através do idioma. São Paulo – SP.</p>
+        <div class="footer-socials">
+          <a href="#" id="footer-instagram" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" id="footer-whatsapp" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" id="footer-youtube" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#metodo">Meu Método</a>
+        <a href="#planos">Planos</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="#" id="footer-email-link"><i class="fas fa-envelope" style="margin-right:6px"></i> <span id="footer-email-text">thais@teacherthais.com</span></a>
+        <a href="#" id="footer-phone-link"><i class="fab fa-whatsapp" style="margin-right:6px"></i> WhatsApp</a>
+        <a href="#" id="footer-booking-link"><i class="fas fa-calendar" style="margin-right:6px"></i> Agendar Aula Grátis</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footer-copy">© 2025 Teacher Thaís. Todos os direitos reservados.</span>
+      <span>
+        <a href="#" style="margin-right:16px">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="#" id="whatsapp-float" class="whatsapp-float" aria-label="Falar no WhatsApp com Teacher Thaís">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  <span>Fale comigo</span>
+</a>
+<script>
+/* ═══ JS — Inject CONFIG, interactions, animations ═══ */
+(function(){
+  /* — Inject CONFIG into DOM — */
+  function wa(phone,msg){return`https://wa.me/${phone}${msg?'?text='+encodeURIComponent(msg):''}`}
+  function waMsg(d){
+    return`Olá, Teacher Thaís! Vim pelo site e gostaria de agendar uma aula.\n\nNome: ${d.name}\nE-mail: ${d.email}\nWhatsApp: ${d.phone}\nNível: ${d.level||'Não informado'}\nMensagem: ${d.message||'Nenhuma mensagem adicional.'}`;
+  }
+
+  /* Hero */
+  document.getElementById('hero-name').textContent = CONFIG.name;
+  document.getElementById('hero-tagline').textContent = CONFIG.tagline;
+  document.getElementById('hero-badge-text').textContent = `${CONFIG.title} · ${CONFIG.city}`;
+  document.getElementById('hero-photo-name').textContent = CONFIG.name;
+  document.getElementById('hero-photo-title').textContent = CONFIG.title;
+  document.getElementById('stat-students').textContent = CONFIG.stats.students;
+  document.getElementById('stat-years').textContent = CONFIG.stats.years;
+  document.getElementById('stat-rating').innerHTML = `${CONFIG.stats.rating} <i class="fas fa-star" style="font-size:1.2rem;color:#FFD700" aria-hidden="true"></i>`;
+  var heroPrimary = document.getElementById('hero-cta-primary');
+  if(heroPrimary) heroPrimary.href = CONFIG.bookingLink;
+
+  /* Sobre */
+  document.getElementById('sobre-name').textContent = CONFIG.firstName;
+  document.getElementById('sobre-bio').textContent = CONFIG.bioFull;
+  document.getElementById('sobre-badge-num').textContent = CONFIG.stats.students;
+  document.getElementById('sobre-quote').innerHTML = `"${CONFIG.quote}" <cite id="sobre-cite">— ${CONFIG.name}</cite>`;
+  var chipsEl = document.getElementById('sobre-chips');
+  CONFIG.chips.forEach(function(c){
+    var s=document.createElement('span');s.className='chip';s.textContent=c;chipsEl.appendChild(s);
+  });
+  var featEl = document.getElementById('sobre-features');
+  CONFIG.features.forEach(function(f){
+    var div=document.createElement('div');div.className='feature-item';div.setAttribute('role','listitem');
+    div.innerHTML=`<i class="fas ${f.icon}" aria-hidden="true"></i><span>${f.text}</span>`;
+    featEl.appendChild(div);
+  });
+
+  /* Método */
+  var metodGrid = document.getElementById('metodo-grid');
+  CONFIG.steps.forEach(function(s){
+    var d=document.createElement('div');d.className='metodo-card fade-in';d.setAttribute('role','listitem');
+    d.innerHTML=`<div class="metodo-num">${s.n}</div><h3>${s.title}</h3><p>${s.desc}</p>`;
+    metodGrid.appendChild(d);
+  });
+
+  /* Planos */
+  var plansGrid = document.getElementById('plans-grid');
+  CONFIG.plans.forEach(function(p,i){
+    var isFeatured = i===1;
+    var d=document.createElement('div');
+    d.className='plan-card fade-in'+(isFeatured?' featured':'');
+    d.setAttribute('role','listitem');
+    var tag = (p.tag && isFeatured)?`<div class="plan-popular-tag">${p.tag}</div>`:'';
+    var feats = p.features.map(function(f){return`<div class="plan-feature">${f}</div>`}).join('');
+    var ctaClass = isFeatured?'btn-white':'btn-primary';
+    d.innerHTML=`${tag}<h3>${p.name}</h3><div class="plan-price">${p.price}</div><div class="plan-period">${p.period}</div><div class="plan-features">${feats}</div><a href="${CONFIG.bookingLink}" class="btn ${ctaClass}" target="_blank" rel="noopener">${p.cta}</a>`;
+    plansGrid.appendChild(d);
+  });
+
+  /* Depoimentos */
+  var testiGrid = document.getElementById('testimonials-grid');
+  CONFIG.testimonials.forEach(function(t){
+    var stars='';for(var i=0;i<t.stars;i++)stars+='<i class="fas fa-star" aria-hidden="true"></i>';
+    var d=document.createElement('div');d.className='testi-card fade-in';d.setAttribute('role','listitem');
+    d.innerHTML=`<div class="testi-quote">"</div><div class="testi-header"><div class="testi-avatar" aria-hidden="true">${t.initials}</div><div><div class="testi-name">${t.name}</div><div class="testi-role">${t.role}</div></div></div><div class="testi-stars" aria-label="${t.stars} estrelas">${stars}</div><p class="testi-text">"${t.text}"</p>`;
+    testiGrid.appendChild(d);
+  });
+
+  /* FAQ */
+  var faqList = document.getElementById('faq-list');
+  CONFIG.faq.forEach(function(f,i){
+    var item=document.createElement('div');item.className='faq-item';item.setAttribute('role','listitem');
+    var uid='faq-a-'+i;
+    item.innerHTML=`<button class="faq-q" aria-expanded="false" aria-controls="${uid}" id="faq-q-${i}"><span>${f.q}</span><i class="fas fa-plus" aria-hidden="true"></i></button><div class="faq-a" id="${uid}" role="region" aria-labelledby="faq-q-${i}"><div class="faq-a-inner">${f.a}</div></div>`;
+    faqList.appendChild(item);
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(el){el.classList.remove('open');el.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+      if(!open){item.classList.add('open');this.setAttribute('aria-expanded','true');}
+    });
+  });
+
+  /* CTA buttons */
+  var ctaBook = document.getElementById('cta-booking-btn');
+  if(ctaBook) ctaBook.href = CONFIG.bookingLink;
+  var ctaWa = document.getElementById('cta-whatsapp-btn');
+  if(ctaWa) ctaWa.href = wa(CONFIG.whatsapp,'Olá, Teacher Thaís! Vim pelo site e gostaria de saber mais sobre as aulas.');
+  var waFloat = document.getElementById('whatsapp-float');
+  if(waFloat) waFloat.href = wa(CONFIG.whatsapp,'Olá, Teacher Thaís! Vim pelo site e gostaria de saber mais.');
+
+  /* Footer */
+  document.getElementById('footer-email-text').textContent = CONFIG.email;
+  document.getElementById('footer-email-link').href = 'mailto:'+CONFIG.email;
+  document.getElementById('footer-instagram').href = CONFIG.instagramUrl;
+  document.getElementById('footer-whatsapp').href = wa(CONFIG.whatsapp);
+  document.getElementById('footer-youtube').href = CONFIG.youtubeUrl;
+  document.getElementById('footer-phone-link').href = wa(CONFIG.whatsapp,'Olá, Teacher Thaís!');
+  document.getElementById('footer-booking-link').href = CONFIG.bookingLink;
+  document.getElementById('footer-copy').textContent = '© '+new Date().getFullYear()+' '+CONFIG.name+'. Todos os direitos reservados.';
+
+  /* Form submit → WhatsApp */
+  var form = document.getElementById('contact-form');
+  if(form) form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={
+      name: document.getElementById('form-name').value,
+      email: document.getElementById('form-email').value,
+      phone: document.getElementById('form-phone').value,
+      level: document.getElementById('form-level').value,
+      message: document.getElementById('form-message').value
+    };
+    if(!d.name||!d.email||!d.phone){alert('Por favor, preencha os campos obrigatórios.');return;}
+    window.open(wa(CONFIG.whatsapp,waMsg(d)),'_blank','noopener');
+  });
+
+  /* Hamburger */
+  var ham = document.getElementById('hamburger');
+  var mMenu = document.getElementById('mobile-menu');
+  if(ham && mMenu){
+    ham.addEventListener('click',function(){
+      var isOpen = mMenu.classList.toggle('open');
+      ham.classList.toggle('open',isOpen);
+      ham.setAttribute('aria-expanded',String(isOpen));
+      document.body.style.overflow = isOpen?'hidden':'';
+    });
+    mMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){
+        mMenu.classList.remove('open');
+        ham.classList.remove('open');
+        ham.setAttribute('aria-expanded','false');
+        document.body.style.overflow='';
+      });
+    });
+  }
+
+  /* Sticky nav */
+  var navEl = document.getElementById('nav');
+  window.addEventListener('scroll',function(){
+    navEl.classList.toggle('scrolled',window.scrollY>20);
+  },{passive:true});
+
+  /* Fade-in on scroll */
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');}});
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-in').forEach(function(el){observer.observe(el);});
+
+})();
+</script>
+</body>
+</html>
