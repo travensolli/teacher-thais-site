@@ -1,0 +1,16 @@
+{
+  "name": "Teacher Thaís",
+  "short_name": "Teacher Thaís",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBF7F1",
+  "theme_color": "#17324D",
+  "icons": [
+    {
+      "src": "/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
