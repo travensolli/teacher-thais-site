@@ -1,0 +1,182 @@
+const SITE = {
+  name: 'Teacher Thaís',
+  firstName: 'Thaís',
+  title: 'Professora de Inglês',
+  tagline: 'Aprenda inglês com leveza, confiança e resultados reais.',
+  city: 'Jacareí – SP',
+  instagram: '@teacherthais',
+  instagramUrl: 'https://instagram.com/thaisolivsts',
+  whatsapp: '5512981730005',
+  email: 'mssantos@gmail.com',
+  bookingLink: 'https://calendly.com/teacherthais',
+  youtubeUrl: 'https://youtube.com/@teacherthais',
+  stats: { students: '350+', years: '8+', rating: '4.9', reviews: '200+' },
+  bioShort:
+    'Sou Thaís, professora de inglês apaixonada por transformar a jornada de aprendizado dos meus alunos. Com mais de 8 anos de experiência, ajudo adultos e jovens a alcançarem a fluência com método próprio e personalizado.',
+  bioFull:
+    'Formada em Letras pela USP com especialização em Teaching English as a Foreign Language (TEFL) pela Universidade de Cambridge, dedico minha carreira a desmistificar o aprendizado do inglês. Meu método combina técnicas comunicativas modernas com atenção total ao ritmo de cada aluno. Acredito que a fluência nasce da confiança — e a confiança, de um ambiente acolhedor e desafiador ao mesmo tempo. Já transformei mais de 350 vidas, de iniciantes absolutos a profissionais que precisavam do inglês para alavancar a carreira.',
+  quote: 'Inglês não é dom. É método, consistência e o professor certo do seu lado.',
+  features: [
+    { icon: 'fa-graduation-cap', text: 'Formada em Letras (USP) + TEFL Cambridge' },
+    { icon: 'fa-heart', text: 'Método 100% personalizado ao seu ritmo' },
+    { icon: 'fa-users', text: '+350 alunos transformados' },
+    { icon: 'fa-star', text: 'Avaliação média 4.9/5 estrelas' },
+    { icon: 'fa-video', text: 'Aulas online via Zoom/Google Meet' },
+    { icon: 'fa-certificate', text: 'Preparação para exames internacionais' },
+  ],
+  chips: [
+    'Letras – USP',
+    'TEFL Cambridge',
+    'Inglês & Espanhol',
+    'Método Comunicativo',
+    'B2C / B2B',
+  ],
+  steps: [
+    {
+      n: '01',
+      title: 'Diagnóstico Gratuito',
+      desc: 'Começamos com uma aula experimental para entender seu nível atual, seus objetivos e seus maiores desafios com o idioma.',
+    },
+    {
+      n: '02',
+      title: 'Plano Personalizado',
+      desc: 'Com base no diagnóstico, monto um plano de estudos sob medida — frequência, materiais e metas claras e alcançáveis.',
+    },
+    {
+      n: '03',
+      title: 'Aulas Dinâmicas',
+      desc: 'Cada aula é planejada para você. Conversação, gramática contextualizada, vocabulário real e muito conteúdo autêntico.',
+    },
+    {
+      n: '04',
+      title: 'Fluência & Confiança',
+      desc: 'Com acompanhamento contínuo e feedback constante, você evolui com segurança até se comunicar com naturalidade e confiança.',
+    },
+  ],
+  plans: [
+    {
+      name: 'Essencial',
+      price: 'R$ 180',
+      pricePerClass: 'R$ 45,00 / aula',
+      period: '/mês',
+      tag: '',
+      features: [
+        '4 aulas por mês (50 min)',
+        'Material didático incluso',
+        'Grupo de suporte no WhatsApp',
+        'Acesso à biblioteca de exercícios',
+        'Gravação das aulas',
+      ],
+      cta: 'Começar Agora',
+    },
+    {
+      name: 'Popular',
+      price: 'R$ 320',
+      pricePerClass: 'R$ 40,00 / aula',
+      period: '/mês',
+      tag: 'Mais Popular',
+      features: [
+        '8 aulas por mês (50 min)',
+        'Material didático incluso',
+        'Grupo de suporte no WhatsApp',
+        'Acesso à biblioteca de exercícios',
+        'Gravação das aulas',
+        'Revisão de textos e e-mails',
+        'Feedback de pronúncia personalizado',
+      ],
+      cta: 'Quero Este Plano',
+    },
+    {
+      name: 'Premium',
+      price: 'R$ 580',
+      pricePerClass: 'R$ 36,25 / aula',
+      period: '/mês',
+      tag: '',
+      features: [
+        '16 aulas por mês (50 min)',
+        'Material didático incluso',
+        'Suporte direto com a Teacher Thaís',
+        'Acesso à biblioteca de exercícios',
+        'Gravação das aulas',
+        'Revisão ilimitada de textos',
+        'Feedback de pronúncia personalizado',
+        'Preparação para exames (TOEFL/IELTS)',
+        'Mentoria de carreira em inglês',
+      ],
+      cta: 'Quero o Premium',
+    },
+  ],
+  testimonials: [
+    {
+      name: 'Ana Carolina',
+      initials: 'AC',
+      stars: 5,
+      role: 'Analista de Marketing',
+      text: 'Em 6 meses com a Teacher Thaís passei de não conseguir formar uma frase para fazer reuniões em inglês com clientes internacionais. Método incrível!',
+    },
+    {
+      name: 'Ricardo Mendes',
+      initials: 'RM',
+      stars: 5,
+      role: 'Engenheiro de Software',
+      text: 'Tentei vários apps e cursos antes. Com a Thaís foi diferente — ela entende minha rotina corrida e as aulas são super produtivas. Já passei no processo seletivo da empresa dos sonhos!',
+    },
+    {
+      name: 'Juliana Ferreira',
+      initials: 'JF',
+      stars: 5,
+      role: 'Estudante de Medicina',
+      text: 'Precisava do inglês para ler artigos científicos e a Thaís criou um plano específico pra mim. Hoje leio e escrevo com muito mais segurança.',
+    },
+    {
+      name: 'Marcos Oliveira',
+      initials: 'MO',
+      stars: 5,
+      role: 'Empreendedor',
+      text: 'Fiz a aula experimental sem expectativas e saí completamente convencido. A didática é leve, divertida e realmente funciona. Recomendo demais!',
+    },
+    {
+      name: 'Fernanda Costa',
+      initials: 'FC',
+      stars: 5,
+      role: 'Designer Gráfica',
+      text: 'A Teacher Thaís tem uma paciência e um talento únicos para explicar. Minha confiança para falar inglês cresceu 100% em poucos meses!',
+    },
+  ],
+  faq: [
+    {
+      q: 'Preciso ter alguma base de inglês para começar?',
+      a: 'Não! Atendo alunos do nível iniciante absoluto ao avançado. Na aula experimental faço um diagnóstico completo do seu nível e monto o plano ideal para você.',
+    },
+    {
+      q: 'Qual plataforma é usada nas aulas?',
+      a: 'As aulas acontecem online pelo Zoom ou Google Meet — você escolhe. Envio o link de acesso com antecedência e as aulas ficam gravadas para você revisar quando quiser.',
+    },
+    {
+      q: 'Como funciona o agendamento das aulas?',
+      a: 'Você agenda diretamente pelo Calendly (link na página) ou pelo WhatsApp. Temos horários flexíveis de segunda a sábado, incluindo manhã, tarde e noite.',
+    },
+    {
+      q: 'As aulas são individuais ou em grupo?',
+      a: 'Trabalho exclusivamente com aulas individuais para garantir atenção 100% ao seu desenvolvimento. Isso é o que torna o método tão eficaz.',
+    },
+    {
+      q: 'Emito certificado de conclusão?',
+      a: 'Sim! Ao concluir um ciclo de estudos, emito um certificado personalizado. Para certificações internacionais reconhecidas (TOEFL, IELTS, Cambridge), ofereço preparação específica.',
+    },
+    {
+      q: 'Posso cancelar ou remarcar aulas?',
+      a: 'Sim, com aviso mínimo de 24 horas você pode remarcar sem nenhuma cobrança. Valorizamos a flexibilidade para encaixar o inglês na sua rotina.',
+    },
+    {
+      q: 'Qual o valor da aula experimental?',
+      a: 'A primeira aula de diagnóstico é totalmente gratuita e sem compromisso. É a minha forma de mostrar o método na prática antes de qualquer decisão.',
+    },
+    {
+      q: 'Vocês emitem nota fiscal?',
+      a: 'Sim! Emito NFS-e (nota fiscal de serviços eletrônica) para todos os pagamentos, seja pessoa física ou jurídica.',
+    },
+  ],
+};
+
+export default SITE;

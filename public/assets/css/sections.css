@@ -1,0 +1,104 @@
+#hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 253, 249, 0.78) 0%,
+    rgba(247, 241, 232, 0.94) 45%,
+    rgba(231, 216, 198, 0.32) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 56px;
+}
+
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(31, 58, 95, 0.12), transparent 68%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#hero::after {
+  content: '';
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(197, 139, 79, 0.14), transparent 68%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#sobre {
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.76), rgba(255, 255, 255, 0.94));
+}
+
+#metodo {
+  background: linear-gradient(
+    135deg,
+    rgba(31, 58, 95, 0.04) 0%,
+    rgba(255, 253, 249, 0.8) 48%,
+    rgba(197, 139, 79, 0.08) 100%
+  );
+}
+
+#planos {
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.96), rgba(247, 241, 232, 0.98));
+}
+
+#depoimentos {
+  background: linear-gradient(
+    135deg,
+    rgba(197, 139, 79, 0.08) 0%,
+    rgba(255, 253, 249, 0.84) 52%,
+    rgba(31, 58, 95, 0.05) 100%
+  );
+}
+
+#faq {
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.95), rgba(247, 241, 232, 0.97));
+}
+
+#agendar {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 52%,
+    #34597f 100%
+  );
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#agendar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 68%);
+  border-radius: 50%;
+}
+
+#agendar::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  right: -5%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(197, 139, 79, 0.14), transparent 68%);
+  border-radius: 50%;
+}
